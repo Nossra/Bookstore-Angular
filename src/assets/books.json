@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title":"OCA STUDY GUIDE",
+        "author":"Martin Nilsson",
+        "nrOfPages":232
+    },
+    {
+        "id": 2,
+        "title":"OCP STUDY GUIDE",
+        "author":"Hasan Madona",
+        "nrOfPages":523
+    },
+    {
+        "id": 3,
+        "title":"MTA STUDY GUIDE",
+        "author":"Andreas Liljegren",
+        "nrOfPages":535
+    },
+    {
+        "id": 4,
+        "title":"Körkortsteori",
+        "author":"Ahmad Anbarje",
+        "nrOfPages":332
+    },
+    {
+        "id": 5,
+        "title":"Att ta körkort utan att köra ihjäl folk",
+        "author":"Ahmad Anbarje",
+        "nrOfPages":989
+    }
+]

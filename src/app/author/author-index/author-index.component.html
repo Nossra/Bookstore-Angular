@@ -1,0 +1,19 @@
+<table class="table table-striped">
+    <thead>
+      <h3>Authors</h3>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Full Name</th>
+        <th scope="col">Management</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let author of authors">
+        <td>{{ author.id }}</td>
+        <td>{{ author.fullName }}</td>
+        <button class="btn btn-primary" (click)="editAuthor(author)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteAuthor(author)">Delete</button>
+      </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="createAuthor()">Add Author</button>

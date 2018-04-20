@@ -1,0 +1,40 @@
+<h1>Create book</h1>
+<form [formGroup]="createBookForm" (ngSubmit)="onSave(createBookForm.value)">
+  <label>Enter name</label>
+  <input type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="title" 
+    name="title"
+    formControlName="title">
+  <span class="is-invalid" 
+    *ngIf="createBookForm.controls['title'].touched && createBookForm.controls['title'].invalid">
+      Required field<br>
+  </span>
+  <label>Amount of pages</label>
+  <input type="number" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="nrOfPages" 
+    name="nrOfPages"
+    formControlName="nrOfPages">
+  <span class="is-invalid" 
+    *ngIf="createBookForm.controls['nrOfPages'].touched && createBookForm.controls['nrOfPages'].invalid">
+      Required field<br>
+  </span>
+  <label>Author</label>
+  <select type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="author" 
+    name="author"
+    formControlName="author">
+    <option *ngFor="let author of authors" value="{{ author.id }}">{{ author.fullName }}</option>
+  </select>
+  <span class="is-invalid" 
+    *ngIf="createBookForm.controls['nrOfPages'].touched && createBookForm.controls['nrOfPages'].invalid">
+      Required field<br>
+  </span>
+  <button type="submit" class="btn btn-primary">Save</button>
+  <button type="button" class="btn btn-danger" (click)="goBack()">Cancel</button>
+</form>

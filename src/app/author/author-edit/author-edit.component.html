@@ -1,0 +1,17 @@
+<h1>Edit {{ oldName }}</h1>
+<form [formGroup]="editForm" (ngSubmit)="onSave(editForm.value)">
+  <label>Edit name</label>
+  <input type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="fullName" 
+    name="fullName"
+    formControlName="fullName"
+    value="{{ author?.fullName }}">
+  <span class="warning" 
+    *ngIf="editForm.controls['fullName'].touched && editForm.controls['fullName'].invalid">
+      Required field
+  </span>
+  <button type="submit" class="btn btn-primary" [disabled]="editForm.pristine">Save</button>
+  <button type="button" class="btn btn-danger" (click)="goBack()">Cancel</button>
+</form>

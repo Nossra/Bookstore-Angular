@@ -1,0 +1,16 @@
+<h1>Create author</h1>
+<form [formGroup]="createForm" (ngSubmit)="onSave(createForm.value)">
+  <label>Enter name</label>
+  <input type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="fullName" 
+    name="fullName"
+    formControlName="fullName">
+  <span class="warning" 
+    *ngIf="createForm.controls['fullName'].touched && createForm.controls['fullName'].invalid">
+      Required field
+  </span>
+  <button type="submit" class="btn btn-primary" [disabled]="!createForm.valid">Save</button>
+  <button type="button" class="btn btn-danger" (click)="goBack()">Cancel</button>
+</form>

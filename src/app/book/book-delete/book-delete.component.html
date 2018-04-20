@@ -1,0 +1,6 @@
+<h1>Delete book</h1>
+<form>
+  <p>Are you sure you want to delete <b>{{ book?.title }}?</b></p>
+  <button class="btn btn-danger" (click)="delete(book)">Delete</button>
+  <button class="btn btn-primary" (click)="goBack()">Abort</button>
+</form>

@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+      <h3>Books</h3>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Pages</th>
+        <th scope="col">Management</th>
+      </tr>
+    </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.id }}</td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.authorName }}</td>
+        <td>{{ book.nrOfPages }}</td>
+        <button class="btn btn-primary"(click)="editBook(book)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteBook(book)">Delete</button>
+      </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="createBook()">Add Book</button>

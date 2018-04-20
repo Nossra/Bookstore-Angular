@@ -1,0 +1,31 @@
+<h1>Edit {{ oldTitle }}</h1>
+<form [formGroup]="editBookForm" (ngSubmit)="onSave(editBookForm.value)">
+  <label>Edit title</label>
+  <input type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="title" 
+    name="title"
+    formControlName="title"
+    value="{{ book?.title }}"
+    [(ngModel)]="book.title">
+  <span class="warning" 
+    *ngIf="editBookForm.controls['title'].touched && editBookForm.controls['title'].invalid">
+      Required field
+  </span>
+  <label>Edit number of pages</label>
+  <input type="number" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="nrOfPages" 
+    name="nrOfPages"
+    formControlName="nrOfPages"
+    value="{{ book?.nrOfPages }}"
+    [(ngModel)]="book.nrOfPages">
+  <span class="warning" 
+    *ngIf="editBookForm.controls['nrOfPages'].touched && editBookForm.controls['nrOfPages'].invalid">
+      Required field
+  </span>
+  <button type="submit" class="btn btn-primary" [disabled]="editBookForm.pristine">Save</button>
+  <button type="button" class="btn btn-danger" (click)="goBack()">Cancel</button>
+</form>

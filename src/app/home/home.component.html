@@ -1,0 +1,24 @@
+<h1>Log in</h1>
+<form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+  <label>Enter name</label>
+  <input type="text" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="username" 
+    name="username"
+    formControlName="username"
+    value="Username">
+    <label>Password</label>
+    <input type="password" 
+    class="form-control" 
+    style="margin-bottom: 10px !important;"
+    id="password" 
+    name="password"
+    value="Password"
+    formControlName="password">
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Log in</button>
+  <span class="warning" 
+  *ngIf="statusCode == 401">
+    Incorrect username or password.
+</span>
+</form>
