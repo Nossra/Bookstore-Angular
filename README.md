@@ -1,5 +1,6 @@
 # BookstoreUi
 
+This angular project is the front-end that talks to my bookstore restful api in another repository.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
 ## Development server
